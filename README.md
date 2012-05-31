@@ -1,4 +1,4 @@
-clase-de-github
+clase-de-github - en la rama mejorandola 
 ===============
 
 Este es un ejemplo de Github para la comunidad de #mejorandola 
