@@ -1,4 +1,3 @@
-esto es una prueba
 clase-de-github - en la rama mejorandola 
 ===============
 
