@@ -3,11 +3,11 @@
 <p> Para usar git a traves de la consola es necesario tener instalado xcode ( se puede instalar desde la appstore ) una vez que lo hayamos descargado e instalado tenemos que instalar las herramientas de linea de comandos. 
 
 <ul>
-	<li>- Abrimos xcode</li>
-	<li>- Nos vamos a las preferencias del programa</li>
-	<li>- Pinchamos sobre la pestaña Downloads</li>
-	<li>- Buscamos "Command Line Tools"</li>
-	<li>- Pinchamos en el boton install que hay a la derecha.</li>
+	<li> Abrimos xcode</li>
+	<li> Nos vamos a las preferencias del programa</li>
+	<li> Pinchamos sobre la pestaña Downloads</li>
+	<li> Buscamos "Command Line Tools"</li>
+	<li> Pinchamos en el boton install que hay a la derecha.</li>
 </ul>
 <br>
 Una vez descargado si que podremos usar git normalmente
