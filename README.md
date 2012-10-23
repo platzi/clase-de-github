@@ -3,7 +3,7 @@ clase-de-github - en la rama mejorandola
 
 Este es un ejemplo de Github para la comunidad de #mejorandola 
 
-si tienes problemas para usar git en MacOs 10.7 mira en el archivo <a href="/ERRORES.md">ERRORES.md</a>
+si tienes problemas para usar git en MacOs 10.7 mira en el archivo <strong>ERRORES.md</strong>
 
 Una vez instalas GIT, debes configurarlo:
 
