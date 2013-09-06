@@ -1,32 +1,99 @@
-clase-de-github - en la rama mejorandola 
-===============
+# Clase-de-github - en la rama mejorandola
+==========================================
 
-Este es un ejemplo de Github para la comunidad de #mejorandola 
+Este es un ejemplo de Github para la comunidad de #mejorandola
+Suscribete en nuestro canal de [YouTube](http://www.youtube.com/mejorandolaweb) y mira el [video](http://mejorando.la/videos/curso-de-introduccion-git-y-github/) de la clase de github.
 
-Una vez instalas GIT, debes configurarlo:
+Nota: este archivo fué modificado, le agregamos unas cuantas descripciones para entender mejor lo que se hizo en el curso.
+mira el archivo original viendo su [historial](https://github.com/Mejorandola/clase-de-github/commits/master/README.md)
 
-git config --global user.name "Christian"
-git config --global user.email "xxxxxx@xxxx.com"
+listo, empecemos:
 
-Generando tu Public Key:
+## Instalar GIT
+  puedes ver la [documentación](https://help.github.com/articles/set-up-git#platform-all) de GitHub para instalar git.
 
-ssh-keygen 
+  Una vez instalas GIT en tu computadora, debes configurarlo desde tu consola:
 
-Leyendo tu llave para copiarla a Github:
+    $ git config --global user.name "Christian"
+    $ git config --global user.email "xxxxxx@xxxx.com"
 
-cat ~/.ssh/id_rsa.pub
+  Opciónal: Para ver en colores (Rojo y Verde) los cambios de nuestros archivos manejados con git:
 
-Arrancando tu proyecto:
+    $ git config --global color.ui true
 
-git init
 
-touch README
+## Generando tu Public Key:
+  Se necesita una llave SSH para conectar tu maquina local con el repositorio remoto de GitHub.
+  en consola:
 
-git add README
+    $ ssh-keygen
 
-git commit -m "tu primer commit"
+  esto generará una llave con la cual te conectarás a GitHub, sigue los pasos que te salgan.
+  
+  Leer tu llave para copiarla a Github:
 
-git push origin master
+    $ cat ~/.ssh/id_rsa.pub
+  
+  * copia y pega el contenido que te da cat, o puedes usar cualquier editor para copiar el contenido de la llave a tu portapapeles.
+  * Ahora debes copiar ese contenido (tu llave) en '[github ssh](https://github.com/settings/ssh)' tal cual como lo tienes.
+  
+listo! ya tenemos configuradas las herramientas para la conexión entre nuestra computadora y GitHub.
+
+
+## Arrancando tu proyecto:
+  En local debes inicializar tu proyecto con git para manejar las versiones:
+
+    $ git init #Esto se hace una sola vez en el proyecto
+
+    $ touch README #Es muy buena práctica tener un archivo en donde se describa qué hace nuestro proyecto
+
+    $ git status #Mira en qué estado se encuentra el proyecto (archivos en rojo=area de trabajo o archivos modificados)
+
+    $ git add README #Enviamos nuestro archivo al área de preparación de Git
+
+    $ git status #De nuevo mira en qué estado está el proyecto (Archivos en verde=área de preparación de Git)
+
+    $ git commit -m "tu primer commit" #Creamos nuestra pequeña version
+
+Cada vez que hagas modificaciones a tu código, debes enviar los archivos modificados (o nuevos) al área de preparación de Git así `$ git add NOMBRE_DE_ARCHIVO` donde NOMBRE_DE_ARCHIVO puede ser el nombre de una carpeta completa o un archivo específico.
+Para agregar todos los archivos modificados al área de preparación: `$ git add .` o `$ git add --all` 
+
+Como buena práctica se recomienda guardar tus versiones en un lugar seguro, nuestra recomendación: GitHub.com
+
+## Conexión remota a GitHub:
+  Para subir tus commits a github debemos crear una conexión remota, usaremos una llave SSH.
+  Crearemos un alias para nuestra conexión y le asignaremos un nombre, en este caso 'origin':
+
+    $ git remote add origin git@github.com:USUARIO/NOMBRE-DE-MI-REPO.git
+  
+  Nota: El alias origin es el mas usado, pero puedes poner el nombre que quieras.
+  Recuerda cambiar tu nombre de USUARIO y el NOMBRE-DE-MI-REPO.
+  
+  Datos importantes:
+  * En 'origin' quedó guardado el destino del repositorio al cual queremos subir nuestros commitis, y ya nunca mas debemos ejecutar la linea anterior en nuestro proyecto.
+  * Debes crear un alias para cada proyecto
+  * Puedes crear varias conexiones remotas para el mismo proyecto, ejemplo: `git remote add myapp git@github.com:USUARIO/NOMBRE-DE-MI-OTRO-REPO.git` 
+  * No solo puedes crear conexiones remotas hacia Github, sino también a cualquier servidor que tenga instalado Git, ej: heroku
+  
+  #### Consultar alias
+  Para consultar cuales son las conexiones que tenemos en nuestro proyecto o para verificar que tenemos una:
+  
+    `$ git remote`
+  
+  aqui se listaran nuestras conexiones, en nuestro caso: `origin`
+  
+## Enviando todo nuestro commit a GitHub
+  Una vez tengamos una versión de nuestro código (commit) en local, y tengamos nuestra conexión remota a nuestro repo en github:
+
+
+    $ git push origin master
+
+  Nos pedirá la contraseña que pusimos al crear la llave SSH y LISTO! Ya tenemos nuestro código en GitHub
+  
+  NOTA: recuerda poner la url "git@github.com:USUAR....." de SSH, si pones "https://github.com/USUAR..." osea el acceso por HTTP, siempre que hagas un commit te pedirá nombre de usuario de GitHub y tu Contraseña.
+
+Descripciones y detalles por [@MaoAiz](https://twitter.com/#!/MaoAiz)
+
 
 /************************************GIT desde 0 - Por @klinsmannf****************************************/
 
