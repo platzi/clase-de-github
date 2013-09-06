@@ -14,44 +14,60 @@ listo, empecemos:
 
   Una vez instalas GIT en tu computadora, debes configurarlo desde tu consola:
 
-    git config --global user.name "Christian"
-    git config --global user.email "xxxxxx@xxxx.com"
+    $ git config --global user.name "Christian"
+    $ git config --global user.email "xxxxxx@xxxx.com"
+
+  Opciónal: Para ver en colores (Rojo y Verde) los cambios de nuestros archivos manejados con git:
+
+    $ git config --global color.ui true
+
 
 ## Generando tu Public Key:
   Se necesita una llave SSH para conectar tu maquina local con el repositorio remoto de GitHub.
   en consola:
-  
-    ssh-keygen
 
-  esto generará una llave con la cual te conectarás a GitHub.
+    $ ssh-keygen
+
+  esto generará una llave con la cual te conectarás a GitHub, sigue los pasos que te salgan.
   
-  Leyendo tu llave para copiarla a Github de nuevo a la consola:
-  
-    cat ~/.ssh/id_rsa.pub
+  Leer tu llave para copiarla a Github:
+
+    $ cat ~/.ssh/id_rsa.pub
   
   * copia y pega el contenido que te da cat, o puedes usar cualquier editor para copiar el contenido de la llave a tu portapapeles.
   * Ahora debes copiar ese contenido (tu llave) en '[github ssh](https://github.com/settings/ssh)' tal cual como lo tienes.
   
-y listo! ya tenemos listas las herramientas para la conexión entre nuestra computadora y GitHub
+listo! ya tenemos configuradas las herramientas para la conexión entre nuestra computadora y GitHub.
+
 
 ## Arrancando tu proyecto:
-  En local debes inicializar tu proyecto con git:
-  
-    git init
+  En local debes inicializar tu proyecto con git para manejar las versiones:
 
-    touch README
+    $ git init #Esto se hace una sola vez en el proyecto
 
-    git add README
+    $ touch README #Es muy buena práctica tener un archivo en donde se describa qué hace nuestro proyecto
 
-    git commit -m "tu primer commit"
-    
-## Creando la conexión remota a GitHub:
-  Para subir tu commit a github debemos crear una conexión remota, aquí usaremos nuestra llave SSH.
+    $ git status #Mira en qué estado se encuentra el proyecto (archivos en rojo=area de trabajo o archivos modificados)
+
+    $ git add README #Enviamos nuestro archivo al área de preparación de Git
+
+    $ git status #De nuevo mira en qué estado está el proyecto (Archivos en verde=área de preparación de Git)
+
+    $ git commit -m "tu primer commit" #Creamos nuestra pequeña version
+
+Cada vez que hagas modificaciones a tu código, debes enviar los archivos modificados (o nuevos) al área de preparación de Git así `$ git add NOMBRE_DE_ARCHIVO` donde NOMBRE_DE_ARCHIVO puede ser el nombre de una carpeta completa o un archivo específico.
+Para agregar todos los archivos modificados al área de preparación: `$ git add .` o `$ git add --all` 
+
+Como buena práctica se recomienda guardar tus versiones en un lugar seguro, nuestra recomendación: GitHub.com
+
+## Conexión remota a GitHub:
+  Para subir tus commits a github debemos crear una conexión remota, usaremos una llave SSH.
   Crearemos un alias para nuestra conexión y le asignaremos un nombre, en este caso 'origin':
-    
-    git remote add origin git@github.com:USUARIO/NOMBRE-DE-MI-REPO.git
+
+    $ git remote add origin git@github.com:USUARIO/NOMBRE-DE-MI-REPO.git
   
-  Nota: El alias origin es el mas usado, pero puedes poner el nombre que quieras. Recuerda cambiar tu nombre de USUARIO y el NOMBRE-DE-MI-REPO.
+  Nota: El alias origin es el mas usado, pero puedes poner el nombre que quieras.
+  Recuerda cambiar tu nombre de USUARIO y el NOMBRE-DE-MI-REPO.
   
   Datos importantes:
   * En 'origin' quedó guardado el destino del repositorio al cual queremos subir nuestros commitis, y ya nunca mas debemos ejecutar la linea anterior en nuestro proyecto.
@@ -62,14 +78,15 @@ y listo! ya tenemos listas las herramientas para la conexión entre nuestra comp
   #### Consultar alias
   Para consultar cuales son las conexiones que tenemos en nuestro proyecto o para verificar que tenemos una:
   
-    `git remote`
+    `$ git remote`
   
   aqui se listaran nuestras conexiones, en nuestro caso: `origin`
   
 ## Enviando todo nuestro commit a GitHub
   Una vez tengamos una versión de nuestro código (commit) en local, y tengamos nuestra conexión remota a nuestro repo en github:
 
-    git push origin master
+
+    $ git push origin master
 
   Nos pedirá la contraseña que pusimos al crear la llave SSH y LISTO! Ya tenemos nuestro código en GitHub
   
