@@ -129,4 +129,4 @@ Git Community Book
 Pro Git
 Think like a git
 GitHub Help
-A Visual Git Guide
+A Visual Git Guide.
