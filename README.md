@@ -122,7 +122,7 @@ git add -i
 clientes gráficos
 GitX (L) (OSX, open source)
 Tower (OSX)
-Source Tree (OSX, free)
+Source Tree (OSX, WIN, free)
 GitHub for Mac (OSX, free)
 guías
 Git Community Book
