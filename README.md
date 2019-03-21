@@ -1,16 +1,23 @@
-clase-de-github - en la rama mejorandola 
+clase-de-github - en la rama mejorandola
 ===============
 
-Este es un ejemplo de Github para la comunidad de #mejorandola 
+Este es un ejemplo de Github para la comunidad de #mejorandola
+
+A continuacion se detallan los comandos y los pasos a seguir para inicarte en el uso de Git con la consola
+Para usar cada comando los mismos deben estar precedidos por la palabra clave git
 
 Una vez instalas GIT, debes configurarlo:
+Haciendo uso del comando config
+Con este comando seguido del atributo --global nos identificamos para nuestro proyecto, de esta forma
+cualquier cambio que realicemos nos identificará con el resto del equipo que trabaje en el mismo proyecto
 
-git config --global user.name "Christian"
+git config --global user.name "usuario"
 git config --global user.email "xxxxxx@xxxx.com"
 
 Generando tu Public Key:
+Esta llave que se va a generar en esta seccion es para lograr que github y tu equipo se identifiquen
 
-ssh-keygen 
+ssh-keygen
 
 Leyendo tu llave para copiarla a Github:
 
@@ -20,13 +27,25 @@ Arrancando tu proyecto:
 
 git init
 
+Este comando init permite inicar git en tu carpeta del proyecto. Al ejecutarlo se crea una carpeta oculta .git, en la
+cual se guardan todos los movimientos o cambios que realices a tus versiones
+
 touch README
 
 git add README
 
+El comando add se utiliza para gregar un nuevo archivo a nuestro proyecto, el mismo se usa seguido del nombre del archivo
+
 git commit -m "tu primer commit"
 
+El comando commit actualiza nuestro proyecto en git, es decir, envia los cambios realizados en los archivos locales de nuestro equipo a git, los mismos quedarian registrados en la carpeta .git se se creo al iniciar git. El -m nos permite agregar un mensaje para establecer una referencia personal al cambio que hemos realizado
+
 git push origin master
+
+Para finalizar con el comando push hacemos una sincronizacion de lo que tenemos en nuestro equipo con el proyecto contenido en el nube o en los repositorios de GitHub, con lo cual el resto del equipo de trabajo puede ver nuestros cambios
+
+Para una guia visual y practica del uso de estos comandos puedes acceder al siguiente enlace y ver el video tutorial
+https://www.youtube.com/watch?reload=9&v=udughzlN5M4
 
 /************************************GIT desde 0 - Por @klinsmannf****************************************/
 
@@ -61,9 +80,9 @@ git commit -m "Commit message"
 Ahora el archivo esta incluído en el HEAD, pero aún no en tu repositorio remoto.
 
 <h3>envío de cambios</h3>
-Tus cambios están ahora en el HEAD de tu copia local. Para enviar esos cambios a tu repositorio remoto ejecuta 
+Tus cambios están ahora en el HEAD de tu copia local. Para enviar esos cambios a tu repositorio remoto ejecuta
 git push origin master
-Reemplaza master por la rama a la cual desees enviar tus cambios. 
+Reemplaza master por la rama a la cual desees enviar tus cambios.
 
 Si no has clonado un repositorio existente y quieres conectar tu repositorio a un repositorio remoto, necesitas agregarlo con
 git remote add origin <server>
@@ -82,7 +101,7 @@ una rama no está disponible para los demás a menos que subas (push) la rama a 
 git push origin <branch>
 
 <h3>actualiza & fusiona</h3>
-para actualizar tu repositorio local al commit más nuevo, ejecuta 
+para actualizar tu repositorio local al commit más nuevo, ejecuta
 git pull
 en tu directorio de trabajo fetch y merge cambios remotos.
 para fusionar otra rama a tu rama activa (por ejemplo master), utiliza
@@ -95,7 +114,7 @@ git diff <source_branch> <target_branch>
 <h3>etiquetas</h3>
 es recomendado crear etiquetas para cada versión publicada de un software. esto es un concepto conocido, el cual tambien existe en SVN. Puedes crear una nueva etiqueta llamada 1.0.0 ejecutando
 git tag 1.0.0 1b2e1d63ff
-el 1b2e1d63ff se refiere a los 10 caracteres de el commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id con 
+el 1b2e1d63ff se refiere a los 10 caracteres de el commit id al cual quieres referirte con tu etiqueta. Puedes obtener el commit id con
 git log
 también puedes usar menos caracteres que el commit id, pero debe ser un valor único.
 
